@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    background: #3A4964;
+}
+h1 {
+    color: #FFF;
+    text-align: center;
+    height: auto;
+    width: 100%;
+    padding: 5px;
+    font-size: 3rem;
+}
+div.main {
+    background: #FFF;
+    height: auto;
+    width: 320px;
+    margin: 30px auto 0;
+    border-radius: 3px;
+    box-shadow: 0 0 80px 0 #60B3FD;
+}
+div#screen {
+    height: 200px;
+    width: 100%;
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0 5px 30px -6px #60B3FD;
+}
+input#operation {
+    height: 100px;
+    width: 100%;
+    text-align: right;
+    color: hsl(0, 0%, 35%);
+    font-size: 1.2rem;
+    border: none;
+    background: transparent;
+    outline: none;
+    overflow-x: hidden;
+    padding-right: 10px;
+}
+input#result {
+    height: 100px;
+    width: 100%;
+    text-align: right;
+    font-size: 2.5rem;
+    border: none;
+    background: transparent;
+    outline: none;
+    overflow-x: hidden;
+    padding-right: 10px;
+    color: hsl(0, 0%, 35%);
+}
+div.pad {
+    height: 327px;
+    width: 100%;
+    display:flex;
+    flex-wrap: wrap;
+    padding: 20px 5px 0;
+}
+span {
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    margin: 2px;
+    text-align: center;
+    line-height: 50px;
+    display: inline-block;
+    margin-left: 20px;
+    font-size: 1.2rem;
+}
+span.number:active, span.coma:active, span.erase:active{
+    transform: scale(2);
+    transition: all 50ms linear;
+}
+span.symb {
+    margin-left: 25px;
+    color: #60B3FD;
+    font-size: 1.3rem;
+    border-radius: 50%;
+    box-shadow: 3px 9px 30px -4px #60B3FD;
+}
+span.symb:active {
+    border: 3px solid #ccc;
+    line-height: 46px;
+    background: #ddd;
+    box-shadow: 3px 9px 30px -4px #FFF;
+}
+span.erase {
+    color: red;
+}
+button {
+    height: 50px;
+    width: 200px;
+    background: #60B3FD;
+    font-size: 2rem;
+    line-height: 50px;
+    position: relative;
+    bottom: -20px;
+    margin: 0 auto;
+    display: block;
+    outline: none;
+    cursor: pointer;
+    color: #FFF;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 2px 20px -2px #60B3FD;
+}
+button:active {
+    box-shadow: 0 9px 31px -8px #60B3FD;
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    h1 {
+        color: #FFF;
+        text-align: center;
+        height: auto;
+        width: 100%;
+        padding: 2px;
+        font-size: 2rem;
+    }
+    div.main {
+        background: #FFF;
+        height: auto;
+        width: 320px;
+        margin: 0 auto;
+        border-radius: 3px;
+        box-shadow: 0 0 80px 0 #60B3FD;
+    }
+    div.screen {
+        height: 200px;
+        width: 100%;
+        border-radius: 3px 3px 0 0;
+        box-shadow: 0 5px 30px -6px #60B3FD;
+    }
+    div.pad {
+        height: 327px;
+        width: 100%;
+        float: left;
+        display:flex;
+        flex-wrap: wrap;
+        padding: 20px 5px 0;
+        transition: margin-left 500ms;
+    }
+    span {
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+        margin: 2px;
+        text-align: center;
+        line-height: 50px;
+        display: inline-block;
+        margin-left: 20px;
+        font-size: 1.4rem;
+    }
+    span.number:active, span.coma:active, span.erase:active{
+        transform: scale(2);
+        transition: all 50ms linear;
+    }
+    span.symb {
+        margin-left: 30px;
+        color: #60B3FD;
+        font-size: 1.3rem;
+        border-radius: 50%;
+        box-shadow: 3px 9px 30px -4px #60B3FD;
+    }
+    span.symb:active {
+        border: 3px solid #ccc;
+        line-height: 46px;
+        background: #ddd;
+        box-shadow: 3px 9px 30px -4px #FFF;
+    }
+    span.erase {
+        color: red;
+    }
+    button {
+        height: 50px;
+        width: 200px;
+        background: #60B3FD;
+        font-size: 2rem;
+        line-height: 50px;
+        position: relative;
+        bottom: -20px;
+        margin: 0 auto;
+        display: block;
+        outline: none;
+        cursor: pointer;
+        color: #FFF;
+        border: none;
+        border-radius: 3px;
+        box-shadow: 0 2px 20px -2px #60B3FD;
+    }
+    button:active {
+        box-shadow: 0 9px 31px -8px #60B3FD;
+    }
+}
