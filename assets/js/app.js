@@ -23,7 +23,7 @@ const calculator = (function () {
             operation.value = "";
         }
     };
-    const clearKey = function (e) {
+    const clearKey = function clearKey(e) {
         if (e.keyCode === 8) {
           operation = element("#operation");
           result = element("#result");
@@ -43,7 +43,7 @@ const calculator = (function () {
     };
 
     //function pour faire les calcules
-    const calcul = function () {
+    const calcul = function calcul() {
         inputValue = element("#operation").value;
 
         numbers = inputValue.split(/\+|\-|\*|\÷/g);

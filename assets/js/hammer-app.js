@@ -6,13 +6,21 @@ const hammerApp = (function () {
 
     const swipeLeft = function () {
         mc.on('swipeleft', function(ev) {
-            console.log(ev);
+            const pad = document.querySelector(".pad");
+            const hidden = document.getElementById("hidden");
+
+            pad.style.marginLeft = "-62px";
+            hidden.style.width = "60px";
         });
     };
 
     const swipeRight = function () {
         mc.on('swiperight', function(ev) {
-            console.log(ev);
+            const pad = document.querySelector(".pad");
+            const hidden = document.getElementById("hidden");
+
+            pad.style.marginLeft = "0";
+            hidden.style.width = "0";
         });
     };
 

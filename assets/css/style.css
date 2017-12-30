@@ -19,6 +19,7 @@ div.main {
     background: #FFF;
     height: auto;
     width: 320px;
+    overflow: hidden;
     margin: 30px auto 0;
     border-radius: 3px;
     box-shadow: 0 0 80px 0 #60B3FD;
@@ -56,9 +57,39 @@ input#result {
 div.pad {
     height: 327px;
     width: 100%;
+    float: left;
     display:flex;
     flex-wrap: wrap;
     padding: 20px 5px 0;
+    transition: margin-left 500ms;
+}
+div#hidden {
+    float: left;
+    height: 327px;
+    width: 0;
+    overflow: hidden;
+    padding: 20px 0 0;
+    transition: width 500ms;
+}
+div#hidden span {
+    margin-left: 0;
+    background: #608efc;
+    color: #fff;
+    border-radius: 50%;
+}
+div#hidden span:active {
+    border: 3px solid #ccc;
+    line-height: 46px;
+    background: #ddd;
+}
+div#hidden span:nth-child(2){
+    margin-top: 25px;
+}
+div#hidden span:nth-child(3){
+    margin-top: 25px;
+}
+div#hidden span:nth-child(4){
+    margin-top: 25px;
 }
 span {
     height: 50px;
@@ -97,8 +128,6 @@ button {
     background: #60B3FD;
     font-size: 2rem;
     line-height: 50px;
-    position: relative;
-    bottom: -20px;
     margin: 0 auto;
     display: block;
     outline: none;
@@ -124,6 +153,7 @@ button:active {
         background: #FFF;
         height: auto;
         width: 320px;
+        overflow: hidden;
         margin: 0 auto;
         border-radius: 3px;
         box-shadow: 0 0 80px 0 #60B3FD;
@@ -142,6 +172,34 @@ button:active {
         flex-wrap: wrap;
         padding: 20px 5px 0;
         transition: margin-left 500ms;
+    }
+    div#hidden {
+        float: left;
+        height: 327px;
+        width: 0;
+        overflow: hidden;
+        padding: 20px 0 0;
+        transition: width 500ms;
+    }
+    div#hidden span {
+        margin-left: 0;
+        background: #608efc;
+        color: #fff;
+        border-radius: 50%;
+    }
+    div#hidden span:active {
+        border: 3px solid #ccc;
+        line-height: 46px;
+        background: #ddd;
+    }
+    div#hidden span:nth-child(2){
+        margin-top: 25px;
+    }
+    div#hidden span:nth-child(3){
+        margin-top: 25px;
+    }
+    div#hidden span:nth-child(4){
+        margin-top: 25px;
     }
     span {
         height: 50px;
@@ -180,8 +238,6 @@ button:active {
         background: #60B3FD;
         font-size: 2rem;
         line-height: 50px;
-        position: relative;
-        bottom: -20px;
         margin: 0 auto;
         display: block;
         outline: none;
