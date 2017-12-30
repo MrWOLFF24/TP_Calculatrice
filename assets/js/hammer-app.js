@@ -5,7 +5,7 @@ const hammerApp = (function () {
     let mc;
 
     const swipeLeft = function () {
-        mc.on('swipeleft', function(ev) {
+        mc.on('swipeleft', function() {
             const pad = document.querySelector(".pad");
             const hidden = document.getElementById("hidden");
 
@@ -15,7 +15,7 @@ const hammerApp = (function () {
     };
 
     const swipeRight = function () {
-        mc.on('swiperight', function(ev) {
+        mc.on('swiperight', function() {
             const pad = document.querySelector(".pad");
             const hidden = document.getElementById("hidden");
 
