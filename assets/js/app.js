@@ -32,7 +32,16 @@ const calculator = (function () {
         }
     };
 
-    //function pour mettre la valeur saisie dans l'input avec les touches clavier
+    //function pour suprimmer le dernier caractère entrée dans l'input
+    const clearOneLast = function clearOneLast() {
+        let newStr, str = element("#operation").value;
+        do {
+            newStr = str.slice(0, -1);
+        }while (str.length < 0);
+        element("#operation").value = newStr;
+    };
+
+    //function pour mettre les valeurs saisie dans l'input avec les touches clavier
     const getNumValue = function getNumValue(e) {
         const key = document.querySelector(`span[data-key="${e.keyCode}"]`);
         if (key) {
@@ -48,6 +57,8 @@ const calculator = (function () {
 
         numbers = inputValue.split(/\+|\-|\*|\÷/g);
         op = inputValue.replace(/[0-9]|\./g, "").split("");
+
+        if (Number.isNaN(numbers)) return;
 
         let divide = op.indexOf("÷");
         while (divide !== -1) {
@@ -103,8 +114,9 @@ const calculator = (function () {
         window.addEventListener('keydown', playSound);
         window.addEventListener('keydown', getNumValue);
         window.addEventListener('keydown', clearKey);
-        window.addEventListener("keydown", function (e) {if (e.keyCode === 13) {calcul();}});
+        window.addEventListener("keydown", (e) => {if (e.keyCode === 13) calcul()});
         document.getElementById("btn_enter").onclick = calcul;
+        element("#erase_one").onclick = () => clearOneLast();
         clear();
         getNumValueClick();
     };
