@@ -55,28 +55,28 @@ const calculator = (function () {
     const calcul = function calcul() {
         inputValue = element("#operation").value;
 
-        numbers = inputValue.split(/\+|\-|\*|\÷/g);
+        numbers = inputValue.split(/\+|\-|\*|\÷|\%/g);
         op = inputValue.replace(/[0-9]|\./g, "").split("");
 
-        if (Number.isNaN(numbers)) return;
+        console.log(numbers.splice());
 
         let divide = op.indexOf("÷");
         while (divide !== -1) {
-            numbers.splice(divide, 2, numbers[divide] / numbers[divide + 1]);
+            numbers.splice(divide, 2, parseFloat(numbers[divide]) / parseFloat(numbers[divide + 1]));
             op.splice(divide, 1);
             divide = op.indexOf("÷");
         }
 
         let multiply = op.indexOf("*");
         while (multiply !== -1) {
-            numbers.splice(multiply, 2, numbers[multiply] * numbers[multiply + 1]);
+            numbers.splice(multiply, 2, parseFloat(numbers[multiply]) * parseFloat(numbers[multiply + 1]));
             op.splice(multiply, 1);
             multiply = op.indexOf("*");
         }
 
         let minus = op.indexOf("-");
         while (minus !== -1) {
-            numbers.splice(minus, 2, numbers[minus] - numbers[minus + 1]);
+            numbers.splice(minus, 2, Number(numbers[minus]) - Number(numbers[minus + 1]));
             op.splice(minus, 1);
             minus = op.indexOf("-");
         }
@@ -88,7 +88,19 @@ const calculator = (function () {
             plus = op.indexOf("+");
         }
 
+        let percentage = op.indexOf("%");
+        while (percentage !== -1) {
+            numbers.splice(percentage, 2, Number(numbers[percentage]) - Number(numbers[percentage + 1] / 100));
+            op.splice(percentage, 1);
+            percentage = op.indexOf("%");
+        }
+
+
         document.getElementById("result").value = numbers[0];
+
+        if (isNaN(numbers[0])) {
+            document.getElementById("result").value = 'Error';
+        }
     };
 
     //function pour recuprer et afficher les valeur au click sur les span
