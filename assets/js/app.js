@@ -126,7 +126,7 @@ const calculator = (function () {
         window.addEventListener('keydown', playSound);
         window.addEventListener('keydown', getNumValue);
         window.addEventListener('keydown', clearKey);
-        window.addEventListener("keydown", (e) => {if (e.keyCode === 13) calcul()});
+        window.addEventListener("keydown", e => {if (e.keyCode === 13) calcul()});
         document.getElementById("btn_enter").onclick = calcul;
         element("#erase_one").onclick = () => clearOneLast();
         clear();
